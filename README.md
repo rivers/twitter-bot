@@ -44,7 +44,7 @@ bot = Twitter::Bot.new(
   access_token_key:    'value',
   access_token_secret: 'value')
 
-bot.search('sneak peak') do |tweet|
+bot.search('sneak peak')
   'I think you mean "sneak peek"'
 end
 ```
@@ -56,15 +56,29 @@ end
 
 #### More examples
 
+Standard Twitter search operators are available:
+
+```ruby
+bot.search('from:nihilist_arbys "horsey saurce"') { 'Yum!' }
+```
+
+Search results are yielded as [Twitter::Tweet](http://www.rubydoc.info/github/sferik/twitter/master/Twitter/Tweet) instances:
+
 ```ruby
 bot.search('"how long is this tweet"') do |tweet|
-  "@#{tweet.user.screen_name} This is #{tweet.text.size} characters long"
+  if tweet.favorite_count > 1
+    sleep 1 # throttle
+
+    "@#{tweet.user.screen_name} This is #{tweet.text.size} characters long"
+  end
 end
 ```
 
-```ruby
-bot.search('from:nihilist_arbys "horsey saurce"') { |tweet| 'Yum!' }
-```
+See also:
+
+* https://twitter.com/stealthmountain
+* https://twitter.com/she_not_he
+* https://twitter.com/pentametron
 
 ## Contributing
 
