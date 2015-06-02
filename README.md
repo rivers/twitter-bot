@@ -44,7 +44,7 @@ bot = Twitter::Bot.new(
   access_token_key:    'value',
   access_token_secret: 'value')
 
-bot.search('sneak peak')
+bot.search('sneak peak') do
   'I think you mean "sneak peek"'
 end
 ```
