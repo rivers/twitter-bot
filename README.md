@@ -5,7 +5,7 @@ account.
 
 Please exercise reasonable benevolence with your new powers.
 
-![Stealth Mountain](http://i.imgur.com/hopMhyb.png "Stealth Mountain")
+![Stealth Mountain](https://raw.githubusercontent.com/rivers/twitter-bot/master/misc/sneak_peek.png "Stealth Mountain")
 
 ## Installation
 
